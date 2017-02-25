@@ -1,16 +1,21 @@
-﻿namespace Asuka.InvertTree
+﻿using System.Collections.Generic;
+
+namespace Asuka.InvertTree
 {
     public class Node
     {
-        public Node() { }
-        public Node(string value)
+        public Node()
+        {
+            Childs = new List<Node>();
+        }
+
+        public Node(string value) : this()
         {
             Value = value;
         }
 
         public string Value { get; set; }
-
-        public Node[] Childs { get; set; }
+        public List<Node> Childs { get; set; }
 
         public override bool Equals(object obj)
         {
